@@ -21,10 +21,8 @@ public class Main {
                 deck[i] = new Card(i%13,"Clubs", false);
             }
         }
-
-        player player1 = new player(2,1);
-
-
+        player player = new player(1);
+        player dealer = new player(2);
 
         shuffle();
         printDeck();
