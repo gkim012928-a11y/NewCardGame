@@ -26,6 +26,11 @@ public class Main {
 
         shuffle();
         printDeck();
+
+        player.sumCards();
+        dealer.sumCards();
+        player.printHand();
+        dealer.printHand();
     }
     public void printDeck(){
         System.out.println("This deck:");
