@@ -1,6 +1,11 @@
+import java.util.Scanner;
+
 public class Main {
 
     public Card [] deck;
+    public player[] dealer;
+    public player[] player1;
+
 
     public static void main(String[] args) {
         Main myapp = new Main();
@@ -21,16 +26,19 @@ public class Main {
                 deck[i] = new Card(i%13,"Clubs", false);
             }
         }
+
+        Scanner sc = new Scanner(System.in);
+        String input = sc.nextLine();
+
         player player = new player(1);
         player dealer = new player(2);
 
         shuffle();
-        printDeck();
 
-        player.sumCards();
-        dealer.sumCards();
-        player.printHand();
-        dealer.printHand();
+            player.addCard(deck[0]);
+            player.addCard(deck[1]);
+            player.printHand();
+
     }
     public void printDeck(){
         System.out.println("This deck:");

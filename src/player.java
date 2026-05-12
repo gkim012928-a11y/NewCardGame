@@ -3,33 +3,30 @@ public class player {
     public int numPlayer;
     public Card [] hand;
     public int numCards;
-    public int totalsum = 0;
+    public int totalsum =0;
 
 
     public player(int pnumPlayer){
         numPlayer = pnumPlayer;
         hand = new Card[11];
-        numCards = 2;
+        numCards = 0;
+
+
 
     }
 
     public void printHand() {
         for(int i = 0; i<numCards;i++) {
+            totalsum += hand[i].value;
             hand[i].printCard();
         }
         System.out.println("The sum of this player's cards is "+totalsum);
     }
 
-    public void addCard(Card newcard){
-        hand[numCards] = newcard;
-        numCards++;
+    public void addCard(Card newCard){
+        hand[numCards] = newCard;
+        numCards ++;
 
-    }
-
-    public void sumCards(){
-        for(int i = 0;i<numCards;i++){
-            totalsum = totalsum + hand[i].value;
-        }
     }
 
     public void stand(){
