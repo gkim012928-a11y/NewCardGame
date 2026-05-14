@@ -7,6 +7,7 @@ public class Card {
         value = pvalue;
         suit = psuit;
         isUp = pisup;
+
     }
 
     public void printCard() {
@@ -27,5 +28,7 @@ public class Card {
         }
 
     }
+
+
 }
 

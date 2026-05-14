@@ -6,9 +6,12 @@ public class Main {
     public player[] dealer;
     public player[] player1;
 
+    public int cardCount = 0;
+
 
     public static void main(String[] args) {
         Main myapp = new Main();
+
     }
     public Main(){
         deck = new Card [52];
@@ -30,14 +33,17 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         String input = sc.nextLine();
 
-        player player = new player(1);
-        player dealer = new player(2);
 
         shuffle();
 
-            player.addCard(deck[0]);
-            player.addCard(deck[1]);
-            player.printHand();
+        player player1 = new player(1);
+        player dealer = new player(0);
+
+        player1.addCard(deck[cardCount]);
+        cardCount ++;
+        player1.addCard(deck[cardCount]);
+        player1.sumHand();
+        player1.printHand();
 
     }
     public void printDeck(){

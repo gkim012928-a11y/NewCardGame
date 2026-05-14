@@ -3,6 +3,7 @@ public class player {
     public int numPlayer;
     public Card [] hand;
     public int numCards;
+    public boolean isBust;
     public int totalsum =0;
 
 
@@ -11,16 +12,6 @@ public class player {
         hand = new Card[11];
         numCards = 0;
 
-
-
-    }
-
-    public void printHand() {
-        for(int i = 0; i<numCards;i++) {
-            totalsum += hand[i].value;
-            hand[i].printCard();
-        }
-        System.out.println("The sum of this player's cards is "+totalsum);
     }
 
     public void addCard(Card newCard){
@@ -29,14 +20,26 @@ public class player {
 
     }
 
+    public void sumHand(){
+        for(int i=0;i<=numCards;i++) {
+            totalsum += hand[i].value;
+        }
+        System.out.println("Player "+numPlayer+" has a hand of: "+totalsum);
+    }
+
+    public void printHand() {
+        for(int i = 0; i<numCards;i++) {
+            hand[i].printCard();
+        }
+    }
+
     public void stand(){
+
+    }
+    public void hit(){
         numCards++;
         for(int i=0;i<numCards;i++){
             hand[numCards] = hand[i];
         }
-
-    }
-    public void hit(){
-
     }
 }
